@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h3>Diffie-Hellman</h3>
+
+p: <input id="p"><br>
+g: <input id="g"><br>
+Alice Secret (a): <input id="a"><br>
+Bob Secret (b): <input id="b"><br><br>
+
+<button onclick="run()">Compute</button>
+
+<p id="out"></p>
+
+<script>
+function run(){
+ let p = +document.getElementById("p").value;
+ let g = +document.getElementById("g").value;
+ let a = +document.getElementById("a").value;
+ let b = +document.getElementById("b").value;
+
+ let A = (g**a) % p;
+ let B = (g**b) % p;
+
+ let S1 = (B**a) % p;
+ let S2 = (A**b) % p;
+
+ document.getElementById("out").innerHTML =
+  (S1==S2) ? "Shared Key = " + S1 : "Not Equal";
+}
+</script>
+
+</body>
+</html>
