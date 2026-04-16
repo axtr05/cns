@@ -17,9 +17,9 @@ class C{
 }
 
 /*
-in : HelloWorld
+in : helloworld
      5
      
 out: MjqqtBtwqi
-     HelloWorld
+     helloworld
 */
